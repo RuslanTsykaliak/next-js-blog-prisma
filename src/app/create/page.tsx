@@ -174,7 +174,7 @@ export default function Create() {
                         ) : control.component === "select" ? (
                           <select
                             name={control.id}
-                            placeholder={control.placeholder}
+                            // placeholder={control.placeholder}  // type error option HTML didn't work
                             onChange={(
                               event: React.ChangeEvent<HTMLSelectElement>
                             ) => {
