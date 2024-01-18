@@ -59,14 +59,11 @@ dependencies:
 
 devDependencies:
   '@prisma/client':
-    specifier: 5.9.0-dev.17
-    version: 5.9.0-dev.17(prisma@5.8.1)
+    specifier: 5.8.1
+    version: 5.8.1(prisma@5.8.1)
   add:
     specifier: ^2.0.6
     version: 2.0.6
-  pnpm:
-    specifier: ^8.14.1
-    version: 8.14.1
   prisma:
     specifier: ^5.8.1
     version: 5.8.1
@@ -921,8 +918,8 @@ packages:
     dev: false
     optional: true
 
-  /@prisma/client@5.9.0-dev.17(prisma@5.8.1):
-    resolution: {integrity: sha512-J6mt5CnY3m6y9S00FDCj0S9cFkLusxdw3n1+76/UDDJNjCDDk2VkYirg+7Ne6wyUKvQ1OXMjOsWynf8yFgKEIw==}
+  /@prisma/client@5.8.1(prisma@5.8.1):
+    resolution: {integrity: sha512-xQtMPfbIwLlbm0VVIVQY2yqQVOxPwRQhvIp7Z3m2900g1bu/zRHKhYZJQWELqmjl6d8YwBy0K2NvMqh47v1ubw==}
     engines: {node: '>=16.13'}
     requiresBuild: true
     peerDependencies:
@@ -1755,12 +1752,6 @@ packages:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
     dev: false
-
-  /pnpm@8.14.1:
-    resolution: {integrity: sha512-hWxOzZfF0/MDVOvDc80y+zcnQpXEidstD2E6HmDwEMrfuxUDbVJfOgbewYl+QhmzxPbTvo8vYvsKNmvuaqp1Mw==}
-    engines: {node: '>=16.14'}
-    hasBin: true
-    dev: true
 
   /postcss-import@15.1.0(postcss@8.4.33):
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
