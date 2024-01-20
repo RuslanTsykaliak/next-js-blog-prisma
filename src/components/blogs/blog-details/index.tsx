@@ -8,15 +8,16 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function BlogDetailsHome({ blogData }: { blogData: Blog }) {
-  console.log(blogData, "blogData");
+export default function BlogDetailsHome({ blogData }: { blogData?: Blog }) {
+  // console.log(blogData, "blogData");
 
   const [comment, setComment] = useState<string>("");
   const { data: session } = useSession();
   const router = useRouter();
 
   async function handleCommentSave() {
-    let extractComments = [...blogData.comments];
+    // let extractComments = [...blogData.comments];
+    let extractComments = blogData?.comments ? [...blogData.comments] : [];
 
     extractComments.push(`${comment}|${session?.user?.name}`);
 
@@ -33,7 +34,7 @@ export default function BlogDetailsHome({ blogData }: { blogData: Blog }) {
 
     const data = await response.json();
 
-    console.log(data, "comment123");
+    // console.log(data, "comment123");
 
     if (data && data.success) {
       setComment("");
@@ -51,7 +52,12 @@ export default function BlogDetailsHome({ blogData }: { blogData: Blog }) {
     };
   }, []);
 
-  if (!blogData) return null;
+  if (!blogData) {
+    return <div>Loading blog details...</div>; // Or a custom loading indicator
+  } // still undefined blogData
+  
+  // { console.warn("blogData is undefined"); }  // not working
+  // return null;
 
   return (
     <>

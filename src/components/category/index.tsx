@@ -7,12 +7,21 @@ import Image from "next/image";
 import { categories } from "@/utils";
 import Link from "next/link";
 
-export default function CategoryList({ list }: { list: Blog[] }) {
+
+// undefined list
+// http://localhost:3000 on the page category
+
+// If the list prop is properly passed in the parent component, you may want to add a default value to the list prop in your CategoryList component to prevent potential undefined issues.
+
+
+// export default function CategoryList({ list }: { list: Blog[] }) {
+export default function CategoryList({ list }: { list?: Blog[] }) {
   console.log(list, "list");
 
   const router = useRouter();
 
-  const getMaxId = Math.max(...list.map((item) => item.id));
+  // const getMaxId = Math.max(...list.map((item) => item.id));
+  const getMaxId = list ? Math.max(...list.map((item) => item.id)) : 0;
 
   console.log(getMaxId);
 

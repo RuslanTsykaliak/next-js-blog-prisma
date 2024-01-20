@@ -23,12 +23,15 @@ export async function GET(request: NextRequest) {
         message: "Failed to fetch data ! Please try again",
       });
     }
-  } catch (error) {
-    console.log(error);
-
-    return NextResponse.json({
-      success: false,
-      message: "Something went wrong ! Please try again",
-    });
+  } finally {
+    
   }
+  // catch (error) {
+  //   console.log(error);
+
+  //   return NextResponse.json({
+  //     success: false,
+  //     message: "Something went wrong ! Please try again",
+  //   });
+  // }
 }

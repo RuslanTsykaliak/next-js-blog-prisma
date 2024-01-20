@@ -6,6 +6,14 @@ export async function GET(req: NextRequest) {
     const url = new URL(req.url);
     const blogID = url.searchParams.get("blogID");
 
+    /////
+    if (!blogID || isNaN(Number(blogID))) {
+      return NextResponse.json({
+        success: false,
+        message: "Invalid blogID provided",
+      });
+    }
+
     const blogDetails = await prisma.post.findUnique({
       where: {
         id: Number(blogID),
@@ -23,12 +31,17 @@ export async function GET(req: NextRequest) {
         message: "Failed to fetch the blog details ! Please try again",
       });
     }
-  } catch (e) {
-    console.log(e);
+  } finally {
 
-    return NextResponse.json({
-      success: false,
-      message: "Something went wrong ! Please try again",
-    });
   }
+  /// Give an error in building by not showing content of posts and providing undefined error.
+  
+  // catch (e) {
+  //   console.log(e);
+
+  //   return NextResponse.json({
+  //     success: false,
+  //     message: "Something went wrong ! Please try again",
+  //   });
+  // }
 }

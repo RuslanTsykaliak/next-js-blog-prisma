@@ -84,8 +84,8 @@ export const firebaseConfig = {
 };
 
 export const initialBlogFormData = {
- title :  '',
- description : '',
- image : '',
- category : '' 
+  title: '',
+  description: '',
+  image: '',
+  category: ''
 }

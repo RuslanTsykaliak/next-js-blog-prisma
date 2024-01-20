@@ -34,12 +34,15 @@ export async function GET(req: NextRequest) {
         message: "Failed to search results",
       });
     }
-  } catch (e) {
-    console.log(e);
-
-    return NextResponse.json({
-      success: false,
-      message: "Something went wrong ! Please try again",
-    });
+  } finally {
+    
   }
+  // catch (e) {
+  //   console.log(e);
+
+  //   return NextResponse.json({
+  //     success: false,
+  //     message: "Something went wrong ! Please try again",
+  //   });
+  // }
 }
