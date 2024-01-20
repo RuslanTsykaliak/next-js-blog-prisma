@@ -7,12 +7,12 @@ export async function GET(req: NextRequest) {
     const blogID = url.searchParams.get("blogID");
 
     /////
-    if (!blogID || isNaN(Number(blogID))) {
-      return NextResponse.json({
-        success: false,
-        message: "Invalid blogID provided",
-      });
-    }
+    // if (!blogID || isNaN(Number(blogID))) {
+    //   return NextResponse.json({
+    //     success: false,
+    //     message: "Invalid blogID provided",
+    //   });
+    // }
 
     const blogDetails = await prisma.post.findUnique({
       where: {

@@ -15,7 +15,9 @@ export async function GET(request: NextRequest) {
         message: "Failed to fetch blog posts. Please try again",
       });
     }
-  } catch (e) {
+  } 
+  // finally {}
+  catch (e) {
     console.log(e);
 
     return NextResponse.json({
